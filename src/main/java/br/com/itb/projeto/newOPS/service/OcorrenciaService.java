@@ -57,13 +57,12 @@ public class OcorrenciaService {
     @Transactional
     public Ocorrencia update(long id, Ocorrencia ocorrenciaDetails) {
         Ocorrencia ocorrencia = findById(id);
+
         if (ocorrencia == null) throw new RuntimeException("Ocorrencia não encontrada com o ID: " + id);
 
         ocorrencia.setDescricao(ocorrenciaDetails.getDescricao());
         ocorrencia.setStatusOcorrencia(ocorrenciaDetails.getStatusOcorrencia());
-        ocorrencia.setDataOcorrencia(ocorrenciaDetails.getDataOcorrencia());
         ocorrencia.setLocalidade(ocorrenciaDetails.getLocalidade());
-        ocorrencia.setUsuario(ocorrenciaDetails.getUsuario());
 
         return ocorrenciaRepository.save(ocorrencia);
     }

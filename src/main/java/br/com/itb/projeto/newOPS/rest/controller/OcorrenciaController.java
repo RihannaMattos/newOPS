@@ -82,7 +82,7 @@ public class OcorrenciaController {
         return ResponseEntity.ok("Ocorrência marcada como solucionada!");
     }
 
-    @PutMapping("/inativar/{id}")
+    @PutMapping("/{id}/inativar")
     public ResponseEntity<String> inativar(@PathVariable long id) {
         ocorrenciaService.inativar(id);
         return ResponseEntity.ok("Ocorrência inativada com sucesso.");
